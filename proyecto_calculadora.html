@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://c.tenor.com/8yWx1Zf8aQMAAAAd/erdtree-elden-ring.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .calculator {
+            padding: 20px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            background: linear-gradient(black, #68592b);
+            box-shadow: 0 0 0 5px #BCA04F;
+        }
+        #display {
+            width: 94%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: black;
+            color: #BCA04F;
+        }
+        .button {
+            width: 80px;
+            height: 40px;
+            font-size: 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #816229;
+            border-radius: 10px;
+            background-size: cover;
+            transition: 0.7s ease;
+        }
+
+        .button:hover{
+            background-color: black;
+            color: #816229;
+            border-color: #BCA04F;
+        }
+        .button:active {
+            background-color: #ccc;
+        }
+        .row {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<div class="calculator">
+    <input type="text" id="display" disabled>
+    <div class="row">
+        <button class="button" onclick="clearDisplay()">C</button>
+        <button class="button" onclick="appendToDisplay('/')">/</button>
+        <button class="button" onclick="appendToDisplay('*')">*</button>
+        <button class="button" onclick="deleteLast()">←</button>
+    </div>
+    <div class="row">
+        <button class="button" onclick="appendToDisplay('7')" >7</button>
+        <button class="button" onclick="appendToDisplay('8')" >8</button>
+        <button class="button" onclick="appendToDisplay('9')" >9</button>
+        <button class="button" onclick="appendToDisplay('-')" >-</button>
+    </div>
+    <div class="row">
+        <button class="button" onclick="appendToDisplay('4')" >4</button>
+        <button class="button" onclick="appendToDisplay('5')" >5</button>
+        <button class="button" onclick="appendToDisplay('6')" >6</button>
+        <button class="button" onclick="appendToDisplay('+')" >+</button>
+    </div>
+    <div class="row">
+        <button class="button" onclick="appendToDisplay('1')"  >1</button>
+        <button class="button" onclick="appendToDisplay('2')"  >2</button>
+        <button class="button" onclick="appendToDisplay('3')"   >3</button>
+        <button class="button" onclick="calculateResult()" >=</button>
+    </div>
+    <div class="row">
+        <button class="button" style="width: 170px; " onclick="appendToDisplay('0')">0</button>
+        <button class="button" onclick="appendToDisplay('.')"   >.</button>
+        <button class="button" onclick="link ()"  >link</button>
+    </div>
+    <div class="row">
+        <button class="button" onclick="calculateSquareRoot('√')"   >√</button>
+        <button class="button" onclick="potencia('^2')" >^2</button>
+        <button class="button" onclick="paridad('1/2')" >P/I</button>
+        <button class="button" onclick="primo('p')" >Primo</button>
+    </div>
+</div>
+
+
+<script>
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+
+    function deleteLast() {
+        var display = document.getElementById('display').value;
+        document.getElementById('display').value = display.slice(0, -1);
+    }
+
+
+    function calculateResult() {
+        var display = document.getElementById('display').value;
+        try {
+            document.getElementById('display').value = eval(display);
+        } catch (error) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+
+    function calculateSquareRoot() { 
+        var display = document.getElementById('display').value; 
+        try { 
+            var result = Math.sqrt(parseFloat(display)); 
+            document.getElementById('display').value = result; 
+
+        } catch (error) { 
+            document.getElementById('display').value = 'Error'; 
+        }
+    }   
+
+    function potencia(){
+        var display = document.getElementById('display').value; 
+        try { 
+            var result = Math.pow(parseFloat(display), 2); 
+            document.getElementById('display').value = result; 
+        } catch (error) { 
+            document.getElementById('display').value = 'Error'; 
+        }
+    }
+
+    function paridad(){
+        var display = document.getElementById('display').value;
+        try{
+            var number = parseFloat(display);
+            if(isNaN(number)){
+                throw new Error("no es un numero valido")
+            }
+
+            if(number%2==0){
+                document.getElementById('display').value = number + " es par";
+            }else{
+                document.getElementById('display').value = number + " es impar";
+            }
+        }catch(error){
+            document.getElementById('display').value = "Error";
+        }
+    }
+
+    function primo(){
+        var display = document.getElementById('display').value;
+        try{
+            var number = parseInt(display);
+            var isPrime = true;
+            for (var i=2; i<=Math.sqrt(number); i++){
+                if(number % i ===0){
+                    isPrime  = false;
+                    break;
+                }
+            }
+
+            if(isPrime){
+                document.getElementById('display').value = number + " es primo";
+            }else{
+                document.getElementById('display').value = number + " no es primo";
+            }
+        }catch(error){
+            document.getElementById('display').value = "Error";
+        }
+    }
+
+    function link(){
+        window.open('https://x.com/usdtermo/status/1812305035105054939?t=Ksz9xEqreImd6Co3RHSmsQ&s=19', '_blank');
+    }
+</script>
+</body>
+</html>
