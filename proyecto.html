@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto - elden ring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <head>
+        <style>
+            
+            body{
+                display: grid;
+                font-family: 'Cormorant Garamond', serif;
+                background-color: #101105;
+            }
+            .menu{
+                background-color: #6C836F;
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            .menu a:hover{
+                background-color: #D9D280;
+                color: rgb(10, 10, 10);
+            }
+
+            .menu img{
+                height: 18px;
+                width: auto;
+            }
+
+            .menuizquierda a, .menuderecha a{
+                margin: 0 10px;
+                color: white;
+                text-decoration: none;
+                transition: background-color 0.7s ease, color 0.7s ease;
+            }
+
+            .menuizquierda, .menuderecha{
+                display: flex;
+            }
+
+            .Titulo{
+                text-align: center;
+                animation: fadeIN 5s forwards;
+                animation: titulo_mov 20s linear infinite;
+            }
+
+            .Titulo H1{
+                font-size: 100px;
+                color: #998b71;
+            }
+
+            @keyframes fadeIN {
+                from{
+                    opacity: 0;
+                }
+                to{
+                    opacity: 1;
+                }
+            }
+
+            @keyframes titulo_mov {
+                0%{
+                    transform: translateX(0);
+                }
+                25%{
+                    transform: translateX(-15%);
+                }
+                75%{
+                    transform: translateX(15%);
+                }
+                100%{
+                    transform: translateX(0);
+                }
+            }
+
+            
+            .carrusel{
+                width: 100vw;
+                height: 375px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .carrusel-images{
+                display: flex;
+                width: 100%;
+                height: 100%;
+                animation: carruse 20s infinite;
+            }
+
+            .carrusel-images img{
+                width: auto;
+                height: 300px;
+                object-fit: cover;
+            }
+
+            @keyframes carruse {
+                0% {
+                    transform: translateX(0);
+                }
+                25% {
+                    transform: translateX(-25%);
+                }
+                50% {
+                    transform: translateX(-50%);
+                }
+                75% {
+                    transform: translateX(-77%);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+            }
+            /*division 1*/
+            .margenes1{
+                margin: 120px;
+                background: linear-gradient(358deg, #0f110d, #F2D06C);
+            }
+            .contenedor1{
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 20px;
+                word-wrap: break-word;
+                border-style: double;
+                text-align: center;
+            }
+
+            .contenedor1 H2{
+                font-size: 30px;
+                font-weight: 100
+            }
+
+            .imagen1{
+                margin-right: 20px;
+                max-width: 400px;
+            }
+
+            .imagen1 img{
+                width: 100%;
+                height: auto;
+            }
+
+            .contenedor1 p{
+                max-width: 700px;
+                line-height: 1.5;
+            }
+
+            .video-container1{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-right: 95PX;
+                margin-left: 95PX;
+            }
+
+            .video-container1 p{
+                font-size: large;
+                font-weight: 500;
+                color: white;
+            }
+
+            .video-container1 iframe{
+                border-style: solid;
+                border-radius: 6px;
+                border-color: #D9B959;
+            }
+
+            .video1{
+                max-width: 300px;
+                margin-right: 20px;
+            }
+            
+
+            .button-container1{
+                display: flex;
+                justify-content: center;
+            }
+
+            .button1 {
+                padding: 10px 15px;
+                cursor: pointer;
+                background-color: #C09C53;
+                transition: background-color 0.7s;
+                border-radius: 7px;
+                margin-left: 20px;
+            }
+
+            .button-container1 a{
+                text-decoration: none;
+                color: #D9C99F;
+                transition: color 0.7s ease;
+            }
+
+            .button1:hover{
+                background-color: transparent;
+                color: black;
+                border: 2px solid #C09C53;
+            }
+
+            .button-container1 a:hover{
+                color: #D9C99F;
+            }
+
+            .single-button1{
+                display: flex;
+                justify-content: center;
+                margin-top: auto;
+            }
+
+            .single-button1 a{
+                text-decoration: none;
+                color: #D9C99F;
+                transition: color 1.5s ease, background-color 1.5s;
+            }
+
+            .single-button1 button{
+                background-color: #C09C53;
+                border-radius: 3px;
+                height: 50px; 
+                width: 70PX;               
+            }
+
+            
+            .single-button1 button:hover{
+                background-color: transparent;
+                border: 2px solid #C09C53;
+            }
+
+            .single-button1 a:hover{
+                color: #D9C99F;
+            }
+
+            /*Seccion 2: Autores*/
+            .margenes2{
+                margin: 120px;
+                background-image: url('https://w0.peakpx.com/wallpaper/580/927/HD-wallpaper-elden-ring-digital-art-gaming-2022.jpg');
+                background-repeat: none;
+                background-size: cover;
+            }
+
+            .contenedor2{
+                display: flex;
+                margin-left: 30px;
+                justify-content: space-between;
+                gap: 40px;
+                padding: 20px;
+            }
+
+            .contenedor2 h2{
+                font-size: 60px;
+                text-align: center;
+                color: #BCBE8B;
+            }
+
+            .Autor{
+                background-color: #BCBE8B;
+                border-color: #6C836F;
+                border-style: groove;
+                border-radius: 5px;
+                padding: 20px;
+                margin-right: 50px;
+            }
+
+            .Autor iframe{
+                background-color: white;
+            }
+
+            .iframe-autor{
+                max-height: 100px;
+                width: auto;
+            }
+
+            .Autor img{
+                max-height: 150px;
+                width: auto;
+                border-style: solid;
+                border-color: #0f110d;
+            }
+
+            /*Seccion 3: carrusel de imagenes de personajes*/
+            .margenes3{
+                margin: 120px;
+                background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200729/pngtree-fire-sparks-rain-illustration-image_372779.jpg');
+                background-repeat: none;
+                background-size: cover;
+            }
+
+            .contenedor3{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                padding: 20px;
+                margin: 0 auto;
+            }
+
+            .personajes{
+                position: relative;
+                width: 300px;
+                text-align: center;
+                height: auto;
+                overflow: hidden;
+                padding: 10px;
+            }
+
+            .personajes h2{
+                color: white;
+                font-size: 30px;
+                font-weight: 3000;
+            }
+
+            .personajes-images{
+                display: flex;
+                transition: transform 0.5 ease-in-out;
+                width: 100%;
+                margin-right: 10px;
+            }
+
+            .slide{
+                min-width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .slide img{
+                width: 100%;
+                height: auto;
+            }
+
+            .slide h3, .slide p{
+                width: 100%;
+                height: auto;
+                color: white;
+            }
+
+            .button-personajes{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-100%);
+                color: #C09C53;
+                background-color: transparent;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 100px;
+                margin: 0 20px;
+                width: auto;
+                z-index: 10;
+            }
+
+            .button-personajes:hover{
+                color: #D9C99F;
+            }
+
+            #prevBtn{
+                left: 0;
+            }
+
+            #nextBtn{
+                right: 0;
+            }
+
+            .sheets{
+                display: inline-flex;
+            }
+
+            .sheets iframe{
+                height: auto;
+                min-height: 400px;
+                width: 700px;
+                border-color: #D9B959;
+                border-style: solid;
+            }
+
+            footer img{
+                height: 3%;
+                width: 3%;
+            }
+
+            /*Seccion 4: spotify y calculadora*/
+            .spotify-container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+                padding: 40px;
+                margin: 40px 0;
+                background-image: url('https://cdn.sortiraparis.com/images/80/66131/1025533-elden-ring-dlc-shadow-of-the-erdtree-decouvrez-la-bande-annonce.jpg');
+                background-size: auto;
+                background-repeat: no-repeat;
+                color: white;
+            }
+
+
+            .spotify-container iframe{
+                flex: 1;
+                margin: 0 97.5px;
+            }
+
+            .spotify-container button{
+                color: white;
+                font-size: 25px;
+                background-color: black;
+                border-color: #C09C53;
+                border-style: solid;
+            }
+
+
+            /*footer*/
+            footer{
+                background-color: black;
+                padding: 10px;
+                text-align: center;
+            }
+
+            footer p{
+                color: white;
+                font-size: 17px;
+            }
+
+            footer img{
+                height: 25px;
+                width: auto;
+                margin-right: 15px;
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+        <nav id="inicio" class="menu">
+            <!--barra de navegacion-->
+            <div class="menuizquierda">
+                <a href="#descripcion">descripcion</a>
+                <a href="#autor">creadores</a>
+                <a href="#record">personajes y misiones</a>
+                <a href="#soundtrack">soundtrack y calculadora</a>
+            </div>
+            <div class="menuderecha">
+                <a href="https://es.bandainamcoent.eu/elden-ring/elden-ring" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Bandai_Namco_Holdings_stacked_logo_%282022%29.svg"></a>
+                <a href="https://www.fromsoftware.jp/ww/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Fromsoftware_logo.png"></a>
+                <a href="https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki" target="_blank"><img src="https://i.pinimg.com/originals/1b/42/8c/1b428ce9af70a3e97dedbe1e32700e0b.png"></a>
+            </div>
+            <!--poner link oficiales de from software y bandai namco-->
+        </nav>
+
+        <div class="carrusel">
+            <div class="carrusel-images">   
+                <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/08-shadow-of-the-erdtree/elden-ring-expansion-SOTE/00-page-content/ERSOTE-header-mobile.jpg?twic=v1/step=10/quality=80/max=760">
+                <img src="https://cdn.mos.cms.futurecdn.net/jZbskesRhzALfcqHx9eiDb-1200-80.jpg">
+                <img src="https://assetsio.gnwcdn.com/elden-ring-bosses-in-order-main-mandatory-8042-1647011924713.jpg?width=1600&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp">
+                <img src="https://www.newgamenetwork.com/images/uploads/gallery/EldenRing/eldr_12.jpg">
+                <img src="https://gameland.gg/wp-content/uploads/2024/06/miquella-and-radahn-921x518.jpg">
+            </div>
+            <!--CARRUSEL DE IMAGENES-->
+
+        </div>
+
+        <div class="Titulo">
+            <!--titulo-->
+            <h1>ELDEN RING</h1>
+        </div>
+
+
+        <!--division 1: descripcion-->
+        <div id="descripcion">
+            <div class="margenes1">
+                <div class="contenedor1">
+                <section class="imagen1">
+                    <h2>DESCRIPCION</h2>
+                    <img src="https://i.pinimg.com/736x/36/3c/a3/363ca37645320f1a058edde4fa133d89.jpg">
+                </section>
+                <br>
+                    <p>La Orden Dorada se ha desmoronado.
+
+                        Levántate, Sinluz, y deja que la gracia te guíe para obtener el poder del Anillo de Elden y convertirte en el gobernante de las Tierras Intermedias.
+                        
+                        En estas tierras, bajo el dominio de la Reina Márika la Eterna, el Anillo de Elden, que dio origen al Árbol Áureo, ha sido destruido.
+                        
+                        Los descendientes de Márika, todos ellos semidioses, se apoderaron de los fragmentos del Anillo de Elden, conocidos como las Grandes Runas. Fue entonces cuando la locura de su renovado poder desató una guerra: la Devastación.
+                        
+                        Esta guerra llevó al abandono de la Voluntad Mayor. Ahora, la gracia perdida vuelve a brillar sobre el Sinluz, quien fue rechazado por la gracia dorada y exiliado de las Tierras Intermedias. Tú, que has muerto y regresado a la vida, con una gracia perdida hace mucho, deberás viajar a las Tierras Intermedias, cruzando el mar brumoso, para rendirte ante el Anillo de Elden.
+                        
+                        Conviértete en el señor del círculo.</p>
+                </div>
+                
+                <br>
+                <section class="video-container1">
+                    <p><b>Trailer oficial</b><br><iframe src="https://www.youtube.com/embed/E3Huy2cdih0?si=Po7yaFKob2dh19Mt" allowfullscreen></iframe></p>
+                    
+                    <p><b>Trailer DLC</b><br><iframe src="https://www.youtube.com/embed/qLZenOn7WUo?si=USV3KVs26_qfBnfE" allowfullscreen></iframe></p>
+                    
+                </section>
+                <br>
+                <section class="button-container1">
+                    <!--poner botones con iconos de las consolas-->
+                    <button class="button1"><a href="https://store.playstation.com/es-es/product/EP0700-PPSA04609_00-ELDENRING0000000" target="_blank">PS4/PS5</a></button>
+                    <button class="button1"><a href="https://www.xbox.com/es-CL/games/elden-ring" target="_blank">XBOX Family</a></button>
+                    <button class="button1"><a href="https://store.steampowered.com/app/1245620/ELDEN_RING/" target="_blank">STEAM</a></button>
+                    <button class="button1"><a href="https://www.amazon.com/s?k=elden+ring&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss" target="_blank">AMAZON</a></button>
+                </section>
+                <br>
+                <div class="single-button1">
+                    <button><a href="#inicio">inicio</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!--division 2: autores-->
+        <div id="autor" class="margenes2">
+            <div class="contenedor2">
+                <h2>Autores</h2>
+                <section class="Autor">
+                    
+                    <img src="https://media.es.wired.com/photos/6463e5fb88218b01bf4a1a56/master/pass/G.R.R.M._EldenRing.jpeg">
+                    <br>
+                    <p>George R. R. Martin, el renombrado autor de Canción de Hielo y Fuego, tuvo un papel clave en la creación del mundo de Elden Ring. Aunque Martin no estuvo directamente involucrado en la creación del guion principal o en el diseño del juego, FromSoftware, el estudio japonés liderado por Hidetaka Miyazaki, lo contactó para desarrollar la mitología y el trasfondo del universo de Elden Ring.
+
+                        Martin no escribió la historia que los jugadores experimentan directamente, pero fue responsable de la creación de la historia antigua de las Tierras Intermedias. Este proceso incluyó el diseño de la estructura política y la genealogía de las familias divinas que gobiernan el mundo del juego. Fue él quien dio forma a los semidioses descendientes de la Reina Márika, describiendo sus luchas por poder tras la destrucción del Círculo de Elden, lo que desencadenó la guerra conocida como la Devastación.
+                        
+                        El trabajo de Martin fue fundamental para establecer el contexto histórico que rodea los eventos del juego. Su toque característico de tragedia familiar, ambición desmedida y la decadencia de antiguos linajes resuena en el destino de los semidioses. Las Grandes Runas, fragmentos del Círculo de Elden que los semidioses reclaman tras su destrucción, son un ejemplo de la influencia de Martin en la narrativa del juego, ya que reflejan su fascinación por el poder corruptor y las guerras entre facciones.
+                        
+                        Martin ha descrito su colaboración como algo "divertido y emocionante", señalando que su labor se limitó a la creación del lore y la construcción del mundo, y que dejó el desarrollo del juego y los eventos actuales en manos de Miyazaki y su equipo. El enfoque de Martin en los aspectos históricos y míticos proporcionó una base rica para que FromSoftware desarrollara un mundo profundo, lleno de misterio y decadencia, muy en línea con los temas oscuros y complejos por los que es conocido en su obra literaria.
+                        </p>
+                    <br>
+                        <iframe src="https://www.infobae.com/latinpower/gaming/2022/03/11/elden-ring-y-geoge-rr-martin-asi-participo-el-creador-de-game-of-thrones-en-la-historia-del-juego/" height="300px" width="auto"></iframe>
+                </section>
+                <section class="Autor">
+                    <img src="https://goldhouse.org/wp-content/uploads/2023/04/Hidetaka-Miyazaki.png">
+                    <p>Hidetaka Miyazaki, presidente de FromSoftware y director creativo de Elden Ring, es el principal arquitecto detrás del diseño y la narrativa del juego. Miyazaki es ampliamente reconocido por revolucionar el género de juegos de rol de acción con títulos como Demon’s Souls, Dark Souls, y Bloodborne. Con Elden Ring, su objetivo fue llevar la experiencia de estos juegos a una escala mayor, integrando un vasto mundo abierto mientras mantenía su distintiva dificultad, exploración profunda y narrativa críptica.
+
+                        Miyazaki ha desarrollado una reputación por su habilidad para crear mundos opresivos y atmosféricos, llenos de misterio, desolación y fragmentos de historias que el jugador descubre poco a poco. En Elden Ring, llevó estas ideas a su máxima expresión, creando las Tierras Intermedias, un vasto mundo interconectado que invita a los jugadores a explorar libremente, siguiendo su propia curiosidad en lugar de una dirección lineal.
+                        
+                        La colaboración con George R. R. Martin fue una parte significativa del proceso de desarrollo. Miyazaki era un admirador de la obra de Martin y lo invitó a colaborar para que el célebre autor construyera la mitología profunda que se convertiría en la base de las Tierras Intermedias. Sin embargo, Miyazaki fue quien tomó las ideas y el lore propuesto por Martin y las convirtió en una experiencia jugable. Fue responsable de darle vida a ese mundo mitológico, diseñando el sistema de juego, los personajes que el jugador encuentra y los eventos actuales que suceden en el juego.
+                        
+                        Miyazaki también aportó su característico estilo narrativo: las historias no se cuentan de manera directa, sino a través de fragmentos de diálogo, descripciones de objetos y la arquitectura misma del mundo. La tragedia que envuelve a los personajes y las situaciones ambiguas son elementos que Miyazaki suele emplear, dejando gran parte de la interpretación en manos del jugador. En Elden Ring, este enfoque se amplía a una narrativa más vasta pero igualmente enigmática.
+                        
+                        Uno de los grandes logros de Miyazaki en Elden Ring fue la creación de un mundo que equilibra la libertad de exploración con su clásica dificultad. Los jugadores no solo enfrentan enemigos poderosos, sino que también deben desentrañar la historia por su cuenta, lo que convierte a la experiencia en algo personal y único. Miyazaki logró crear un mundo vivo y vibrante, lleno de secretos, donde cada rincón invita a la curiosidad y la sorpresa.</p>
+                    <iframe src="https://www.infobae.com/malditos-nerds/2024/06/17/summer-game-fest-2024-hablamos-con-hidetaka-miyazaki-director-de-elden-ring-y-padre-de-la-serie-souls/" height="300px" width="auto"></iframe>
+                </section>
+            </div>
+            <div class="single-button1">
+                <button><a href="#inicio">inicio</a></button>
+            </div>
+        </div>
+
+        <!--division3: Personajes y misiones-->
+        <div class="margenes3" id="record">
+            <div class="contenedor3">
+                <!--division de "carrusel"-->
+                <div class="personajes">
+                    <h2>Personajes y misiones</h2>
+                    <button id="prevBtn" class="button-personajes">&#8249</button>
+                    <div class="personajes-images">
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-samourai-full.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Samurai</h3>
+                            <p>Un habil luchador de los lejanos territorios de cañaveral
+                                Diestro con katanas y arcos largos.
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-wretch-full.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Miserable</h3>
+                            <p>Un pobre tonto sin proposito en la vida, desnudo como el dia en el que nacio.
+                                Solo posee un garrote
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-prophet-full.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Profeta</h3>
+                            <p>Un vidente marginado por sus profecias catastroficas.
+                                Experimentado en encantamientos de curacion.
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-confessor-full.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Confesor</h3>
+                            <p>Un espia eclesiastico habilidoso en las actividades clandestinas.
+                                Diestro con la espada y los encantamientos
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-astrologer-full.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Astrologo</h3>
+                            <p>Un erudito que lee el destino en las estrellas
+                                Seguidor de la escuela de hechiceria de piedras refulgentes
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-bandit-full.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Bandido</h3>
+                            <p>Un peligroso bandido que ataca los puntos debiles.
+                                Destaca en el combate a distancia con arcos.
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-prisoner-full.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Prisionero</h3>
+                            <p>Prisionero encasquetado en una mascara de hierro.
+                                Al haber pertenecido a la elite cuando era libre, conoce la hechiceria de piedras refugentes.
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-vagabond-full.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Vagante</h3>
+                            <p> Un caballero exiliado de su tierra natal y obligado a deambular.
+                                Robusto y armado.
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-warrior-full-new.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Guerrero</h3>
+                            <p>Un guerrero de una tribu nomada que empuña armas en ambas manos.
+                                Tecnica excepcional.
+                            </p>
+                        </div>
+                        <div class="slide">
+                            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-hero-full-new.png?twic=v1/resize=250/step=10/quality=80">
+                            <h3>Heroe</h3>
+                            <p>Un heroe fiel, comodo empuñando un hacha de guerra.
+                                Descendiente de un lider de Tierra Baldia
+                            </p>
+                        </div>
+                    </div>
+                    <button id="nextBtn" class="button-personajes">&#8250</button>
+                </div>
+                <section class="sheets">
+                    <!--aqui va el sheets, averiguar de que hacer-->
+                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9uc2koUFg_ZZJs0UA7ovRj2Kg_Vs3WOfjwWFJmgcYdleSbCRLUTGJr60Dk8Bm9HiL2WZnbJwBFtDL/pubhtml?gid=0&single=true" width="auto" height="900px"></iframe>
+                </section>
+            </div>
+            <div class="single-button1">
+                <button><a href="#inicio">inicio</a></button>
+            </div>
+        </div>
+
+    <!--Seccion 4: Soundtrack-->
+
+        <div id="soundtrack">
+            <div class="spotify-container">
+                <secion>
+                    <h2>Escucha el soundtrack oficial<br><iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/72oL3sD7toB7YvInNmrznf?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen=""></iframe>
+                        <br><iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4BYjgs1SCc7D4HXbCnjRUy?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen=""></iframe></h2>
+                </secion>
+                <section>
+                    <!--aqui la calculadora-->
+                    <iframe src="https://kekikike.github.io/dise-o-web-/proyecto_calculadora.html" height="450px" width="450px"></iframe>
+                    <a href="https://drive.google.com/uc?id=1JoHfdtYjzOXR3HvPXVbH2LDP5r4s6GuR&export=download" download="calculadora.html">
+                        <button>Descargar HTML</button>
+                    </a>
+                </section>
+                <div class="single-button1">
+                    <button><a href="#inicio">inicio</a></button>
+                </div>
+            </div>
+            
+        </div>
+
+        <script>
+            const slides = document.querySelectorAll('.slide');
+            let currentIndex = 0;
+
+            document.getElementById('nextBtn').addEventListener('click', ()=> {
+                currentIndex = (currentIndex + 1)% slides.length;
+                updateCarousel()
+            });
+
+            document.getElementById('prevBtn').addEventListener('click', ()=>{
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+            });
+
+            function updateCarousel(){
+                const personajesimages = document.querySelector('.personajes-images');
+                const offset = -currentIndex * 100;
+                personajesimages.style.transform = `translateX(${offset}%)`;
+            }
+
+            window.addEventListener('resize', function() {
+                var width = window.innerWidth;
+                var height = window.innerHeight;
+                document.querySelector('div').style.width = (width * 0.5) + 'px';
+                document.querySelector('div').style.height = (height * 0.5) + 'px';
+            });
+
+        </script>
+    </body>
+
+    <footer>
+        <nav>
+            <a href="https://youtube.com/@fromsoftwareinc?si=cQbz31PQjpZM4acc" target="_blank"><img src="https://i.pinimg.com/736x/6e/06/d2/6e06d227949bb5eec50baaf1fb599103.jpg"></a>
+            <a href="https://www.facebook.com/fromsoftware.jp?mibextid=ZbWKwL" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png"></a>
+            <a href="https://x.com/fromsoftware_pr?t=171wHqL1LqmJn5WraCdMLg&s=09" target="_blank"><img src="https://img.freepik.com/vector-gratis/nuevo-diseno-icono-x-logotipo-twitter-2023_1017-45418.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1727222400&semt=ais_hybrid"></a>
+            <a href="https://www.instagram.com/fromsoftware_jp?igsh=MWk1d2VwZ29tejV1cw==" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png"></a>
+            <a href="https://www.tiktok.com/@bandainamcous?_t=8q8I8uLKXeY&_r=1" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/023/986/492/non_2x/tiktok-logo-tiktok-logo-transparent-tiktok-icon-transparent-free-free-png.png"></a>
+        </nav>
+        <p> ® todos los derechos reservados - Elden ring</p>
+    </footer>
+
+</html>
+
